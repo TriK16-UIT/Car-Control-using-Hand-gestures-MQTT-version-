@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Display webcam for car controlling</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <script src="{{ url_for('static', filename= 'js/scripts.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Display webcam</h1>
+    <div id = "concontainer" style="display: flex; flex-direction: row; justify-content: center;">
+    <div id = "container">
+        <video autoplay="" id="videoElement">
+        </video>
+        <div id = "camswitch">
+            <label class="switch">
+                <input type="checkbox" id="Cameracheckbox" onclick="isCameraOn()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="floatcontainer">
+            <div id="result"> Waiting for camera is on...</div>  
+        </div> 
+        <canvas id="canvas" width="500" height="375"  style="overflow: auto;"></canvas>   
+    </div>
+    <div id = "container3">
+        <canvas id="canvas1" width="500" height="375"  style="overflow: auto;"></canvas> 
+    </div>
+    </div>
+    <div id = "container2">
+        <button id="Scan" onclick="ScanforBluetoothDevices()">Scan for Bluetooth Devices</button>
+        <div id="ListofDevices">
+            <ul id="List">
+            </ul>
+        </div>
+        <button id="Connect" onclick="ConnectBluetoothDevice()">Connect</button>
+    </div>
+</body>
+</html>
